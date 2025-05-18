@@ -2,15 +2,6 @@
 
 A smart city application that optimizes water distribution networks using graph algorithms. This tool visualizes water networks and performs maximum flow analysis, cost-effective pipeline design, and efficient water routing.
 
-![Water Distribution Optimizer]
-- [Features](#features)
-- [Project Structure](#project-structure)
-- [Installation](#installation)
-- [Running the Application](#running-the-application)
-- [Usage Guide](#usage-guide)
-- [Algorithms](#algorithms)
-- [Technologies Used](#technologies-used)
-
 ## ✨ Features
 
 - **Maximum Flow Analysis**: Optimize water flow from source to destination using the Ford-Fulkerson algorithm
