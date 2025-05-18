@@ -9,6 +9,11 @@ from utils.network_creator import create_water_network
 app = Flask(__name__)
 CORS(app)  # Enable CORS for all routes
 
+# ---------- Root Route ----------
+@app.route('/')
+def home():
+    return 'Water Distribution Optimizer Backend is running!'
+
 @app.route('/api/health', methods=['GET'])
 def health_check():
     return jsonify({"status": "healthy"})
