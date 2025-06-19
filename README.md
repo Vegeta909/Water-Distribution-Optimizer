@@ -151,3 +151,8 @@ The frontend application will open in your browser at http://localhost:3000.
 ## 📡 Data
 
 - Place your filtered sensor data as `backend/data/Filtered_Data.csv`.
+
+## 🙌 Thank You for Exploring Water Distribution Optimizer!
+
+We hope this system contributes toward smarter, data-driven water management solutions.  
+
