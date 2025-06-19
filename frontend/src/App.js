@@ -8,6 +8,8 @@ import Home from './pages/Home';
 import MaxFlow from './pages/MaxFlow';
 import MinimumSpanningTree from './pages/MinimumSpanningTree';
 import ShortestPath from './pages/ShortestPath';
+import Monitoring from './pages/Monitoring';
+import SensorData from './pages/SensorData';
 import Footer from './components/Footer';
 
 // Create a theme with water-inspired colors
@@ -71,6 +73,8 @@ function App() {
               <Route path="/max-flow" element={<MaxFlow />} />
               <Route path="/minimum-spanning-tree" element={<MinimumSpanningTree />} />
               <Route path="/shortest-path" element={<ShortestPath />} />
+              <Route path="/monitoring" element={<Monitoring />} />
+              <Route path="/sensor-data" element={<SensorData />} />
             </Routes>
           </main>
           <Footer />

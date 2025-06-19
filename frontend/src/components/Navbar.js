@@ -13,6 +13,8 @@ import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
+import TimelineIcon from '@mui/icons-material/Timeline';
+import MonitorIcon from '@mui/icons-material/Monitor';
 
 function Navbar() {
   const theme = useTheme();
@@ -74,6 +76,8 @@ function Navbar() {
                 onClose={handleClose}
               >
                 <MenuItem onClick={handleClose} component={RouterLink} to="/">Home</MenuItem>
+                <MenuItem onClick={handleClose} component={RouterLink} to="/sensor-data">Sensor Data</MenuItem>
+                <MenuItem onClick={handleClose} component={RouterLink} to="/monitoring">Monitoring</MenuItem>
                 <MenuItem onClick={handleClose} component={RouterLink} to="/max-flow">Optimize Flow</MenuItem>
                 <MenuItem onClick={handleClose} component={RouterLink} to="/minimum-spanning-tree">Pipeline Design</MenuItem>
                 <MenuItem onClick={handleClose} component={RouterLink} to="/shortest-path">Water Routing</MenuItem>
@@ -81,10 +85,51 @@ function Navbar() {
             </>
           ) : (
             <Box sx={{ display: 'flex', gap: 2 }}>
-              <Button color="inherit" component={RouterLink} to="/">Home</Button>
-              <Button color="inherit" component={RouterLink} to="/max-flow">Optimize Flow</Button>
-              <Button color="inherit" component={RouterLink} to="/minimum-spanning-tree">Pipeline Design</Button>
-              <Button color="inherit" component={RouterLink} to="/shortest-path">Water Routing</Button>
+              <Button
+                component={RouterLink}
+                to="/"
+                color="inherit"
+                startIcon={<OpacityIcon />}
+              >
+                Home
+              </Button>
+              <Button
+                component={RouterLink}
+                to="/sensor-data"
+                color="inherit"
+                startIcon={<TimelineIcon />}
+              >
+                Sensor Data
+              </Button>
+              <Button
+                component={RouterLink}
+                to="/monitoring"
+                color="inherit"
+                startIcon={<MonitorIcon />}
+              >
+                Monitoring
+              </Button>
+              <Button
+                component={RouterLink}
+                to="/max-flow"
+                color="inherit"
+              >
+                Max Flow
+              </Button>
+              <Button
+                component={RouterLink}
+                to="/minimum-spanning-tree"
+                color="inherit"
+              >
+                MST
+              </Button>
+              <Button
+                component={RouterLink}
+                to="/shortest-path"
+                color="inherit"
+              >
+                Shortest Path
+              </Button>
             </Box>
           )}
         </Toolbar>

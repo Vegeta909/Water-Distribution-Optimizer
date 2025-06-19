@@ -4,6 +4,8 @@ import { Link as RouterLink } from 'react-router-dom';
 import OpacityIcon from '@mui/icons-material/Opacity';
 import AccountTreeIcon from '@mui/icons-material/AccountTree';
 import RouteIcon from '@mui/icons-material/Route';
+import TimelineIcon from '@mui/icons-material/Timeline';
+import MonitorIcon from '@mui/icons-material/Monitor';
 import ProcessSteps from '../components/ProcessSteps';
 
 function Home() {
@@ -16,23 +18,37 @@ function Home() {
 
   const featureBoxes = [
     {
+      title: "Sensor Data Analysis",
+      icon: <TimelineIcon sx={{ fontSize: 60, color: 'primary.main' }} />,
+      description: "View and analyze real-time sensor data from your water distribution network.",
+      buttonText: "View Sensors",
+      linkTo: "/sensor-data"
+    },
+    {
+      title: "Network Monitoring",
+      icon: <MonitorIcon sx={{ fontSize: 60, color: 'primary.main' }} />,
+      description: "Monitor your network's dynamic routing and performance metrics in real-time.",
+      buttonText: "Monitor Network",
+      linkTo: "/monitoring"
+    },
+    {
       title: "Optimize Water Flow",
       icon: <OpacityIcon sx={{ fontSize: 60, color: 'primary.main' }} />,
-      description: "Maximize the amount of water that can flow through your distribution network from source to consumers.",
+      description: "Maximize the amount of water that can flow through your distribution network.",
       buttonText: "Analyze Flow",
       linkTo: "/max-flow"
     },
     {
       title: "Design Pipelines",
       icon: <AccountTreeIcon sx={{ fontSize: 60, color: 'primary.main' }} />,
-      description: "Find the most cost-effective way to connect all parts of your water network with minimum investment.",
+      description: "Find the most cost-effective way to connect all parts of your water network.",
       buttonText: "Design Network",
       linkTo: "/minimum-spanning-tree"
     },
     {
       title: "Route Water",
       icon: <RouteIcon sx={{ fontSize: 60, color: 'primary.main' }} />,
-      description: "Calculate the most efficient routes for water distribution between any two points in your network.",
+      description: "Calculate the most efficient routes for water distribution between points.",
       buttonText: "Find Routes",
       linkTo: "/shortest-path"
     }
@@ -40,16 +56,24 @@ function Home() {
 
   const algorithmInfoBoxes = [
     {
+      title: "Sensor Data Monitoring",
+      description: "Real-time monitoring of pressure and flow rate data from network sensors."
+    },
+    {
+      title: "Dynamic Network Routing",
+      description: "Adaptive routing based on current network conditions and sensor readings."
+    },
+    {
       title: "Maximum Flow Analysis",
-      description: "Uses the Ford-Fulkerson algorithm to calculate the maximum amount of water that can flow through the network from source to destination."
+      description: "Uses the Ford-Fulkerson algorithm to calculate the maximum water flow."
     },
     {
       title: "Minimum Spanning Tree",
-      description: "Implements Prim's or Kruskal's algorithm to find the most cost-effective way to connect all parts of the water network."
+      description: "Implements Prim's or Kruskal's algorithm for cost-effective network design."
     },
     {
       title: "Shortest Path Finding",
-      description: "Applies Dijkstra's algorithm to determine the most efficient route for water distribution between any two points in the network."
+      description: "Applies Dijkstra's algorithm to determine efficient water distribution routes."
     }
   ];
 
@@ -60,7 +84,7 @@ function Home() {
           Water Distribution Optimizer
         </Typography>
         <Typography variant="h6" color="text.secondary" paragraph sx={{ maxWidth: '800px', mx: 'auto' }}>
-          Optimize water flow, design cost-effective pipeline networks, and find efficient distribution routes using advanced graph algorithms
+          Optimize water flow, monitor network performance, and find efficient distribution routes using advanced algorithms
         </Typography>
       </Box>
 
@@ -132,7 +156,7 @@ function Home() {
           About the Project
         </Typography>
         <Typography variant="body1" paragraph sx={{ mb: 4 }}>
-          The Water Distribution Optimizer is an educational tool designed to demonstrate how graph algorithms can be applied to optimize water distribution networks in smart cities. The application processes static datasets to perform various optimizations:
+          The Water Distribution Optimizer is an educational tool designed to demonstrate how graph algorithms and real-time monitoring can be applied to optimize water distribution networks in smart cities.
         </Typography>
         <Grid container spacing={3} alignItems="stretch">
           {algorithmInfoBoxes.map((algorithm, index) => (
