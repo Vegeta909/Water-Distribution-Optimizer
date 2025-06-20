@@ -6,8 +6,10 @@ def convert_to_undirected(graph):
     
     for u in graph:
         for v in graph[u]:
+            # Avoid adding duplicate edges (since it's undirected)
             if G_undirected.has_edge(u, v):
                 continue
+            # Use 'cost' as the edge weight, default to 1 if missing
             G_undirected.add_edge(u, v, weight=graph[u][v].get('cost', 1))
     
     return G_undirected
