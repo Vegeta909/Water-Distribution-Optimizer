@@ -2,9 +2,10 @@ import networkx as nx
 
 def add_super_sink(G, sinks):
     """Add a super sink node to handle multiple sinks"""
-    G_ff = G.copy()
+    G_ff = G.copy() # Work on a copy so we don’t mess with the original
     G_ff.add_node("SuperSink")
     for sink in sinks:
+        # Connect each individual sink to the SuperSink with unlimited capacity
         G_ff.add_edge(sink, "SuperSink", capacity=float('inf'))
     return G_ff
 
