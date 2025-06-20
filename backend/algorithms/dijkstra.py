@@ -19,10 +19,14 @@ def dijkstra(graph, source):
             weight = graph[u][v].get('weight', 
                      graph[u][v].get('distance',
                      graph[u][v].get('cost', 1)))
+            # Add the edge along with the resolved weight
             G.add_edge(u, v, weight=weight)
     
-    # Calculate shortest paths
+    # Calculate shortest paths 
     paths = nx.single_source_dijkstra_path(G, source, weight='weight')
+
+    # Get shortest distances from source to all reachable nodes
     distances = nx.single_source_dijkstra_path_length(G, source, weight='weight')
-    
+
+    # Returning both distances and full paths
     return distances, paths
