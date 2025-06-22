@@ -111,7 +111,7 @@ def get_sensor_data():
     return filtered.to_json(orient='records')
 
 # ---------- Dynamic Routing Endpoint ----------
-def dijkstra(graph, start):
+def dynamic_dijkstra(graph, start):
     import heapq
     queue = [(0, start)]
     distances = {node: float('inf') for node in graph}
@@ -157,7 +157,7 @@ def dynamic_routing():
         
         # Create dynamic graph with weights
         dynamic_graph = compute_dynamic_weights(base_graph, flow, p1, p2)
-        distances, _ = dijkstra(dynamic_graph, 'A')
+        distances, _ = dynamic_dijkstra(dynamic_graph, 'A')
         
         # Convert to network structure for visualization
         nodes = []
